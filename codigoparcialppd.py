@@ -60,13 +60,13 @@ if __name__ == "__main__":
     hilos_satelites = []
     hilos_analistas = []
 
-    # Crear y arrancar hilos de recepción (Ej: 2 satélites)
+    # Crear y arrancar hilos de recepción
     for i in range(2):
         hilo = threading.Thread(target=recepcion_satelite, args=(f"SATELITE-{i+1}", 4))
         hilos_satelites.append(hilo)
         hilo.start()
 
-    # Crear y arrancar hilos de procesamiento (Ej: 3 analistas automáticos)
+    # Crear y arrancar hilos de procesamiento 
     for i in range(3):
         hilo = threading.Thread(target=analista_automatico, args=(f"ANALISTA-{i+1}",))
         hilos_analistas.append(hilo)
